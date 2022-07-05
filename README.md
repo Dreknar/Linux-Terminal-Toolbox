@@ -12,3 +12,11 @@ Just clone repository on your machine
 ```
 git clone https://github.com/Dreknar/Linux-Terminal-Toolbox.git
 ```
+## Pimp My Term
+Better terminal, extra tools and pretty UI
+
+**ZSH and Bash**
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/zsh_and_bash.png?token=GHSAT0AAAAAABWI3PGAJ4YATEOI6NYSAJSOYWEBQQQ "ZSH and Bash")
+
+**New tools: bat and lsd**
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/bat_and_lsd.png?token=GHSAT0AAAAAABWI3PGAUQZEQAJ2H3SVK3M4YWEBQFQ "BAT and LSD")
