@@ -8,6 +8,9 @@ sudo apt install zsh -y
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 sudo apt install zsh-autosuggestions zsh-syntax-highlighting -y
 
+echo '========== Prepare files =========='
+./data/pimp_my_term/install.sh
+
 echo '========== Install extra tools =========='
 cd /tmp
 wget https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_amd64.deb
