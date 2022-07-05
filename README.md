@@ -21,6 +21,7 @@ Better terminal, extra tools and pretty UI. Big thanks for: https://github.com/d
 **New tools: bat and lsd**
 ![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/bat_and_lsd.png?token=GHSAT0AAAAAABWI3PGAUQZEQAJ2H3SVK3M4YWEBQFQ "BAT and LSD")
 
-## Pimp My Term
+## Show Tools Version
 Simple scripts - show current versions tools that I use.
 
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/show_tools_versions.png "show_tools_version.sh")
