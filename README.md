@@ -13,7 +13,7 @@ Just clone repository on your machine
 git clone https://github.com/Dreknar/Linux-Terminal-Toolbox.git
 ```
 ## Pimp My Term
-Better terminal, extra tools and pretty UI
+Better terminal, extra tools and pretty UI. Big thanks for: https://github.com/daniruiz/dotfiles
 
 **ZSH and Bash**
 ![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/zsh_and_bash.png?token=GHSAT0AAAAAABWI3PGAJ4YATEOI6NYSAJSOYWEBQQQ "ZSH and Bash")
