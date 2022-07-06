@@ -77,7 +77,7 @@ create_project() {
 	echo '[Complete] Your environment for project'
 	poetry env info
 
-	echo "[$(date +'%Y-%m-%d %H:%M')] ${pyversion} ${project_path} $(poetry env info --path)" >> ${PYGAIA_DIR}/created_project.log
+	echo "[$(date +'%Y-%m-%dT%H:%M')] ${pyversion} ${project_path} $(poetry env info --path)" >> ${PYGAIA_DIR}/created_project.log
 }
 
 init_env() {
