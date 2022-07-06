@@ -12,12 +12,18 @@ if [[ $1 == 'docker' ]]; then
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
     rm -rf get-docker.sh
-    echo 'Please remember execute: sudo usermod -aG docker <your_username> for rotless access.'
+    echo 'Please remember execute: sudo usermod -aG docker <your_username> for rootless access.'
 fi
 
 if [[ $1 == 'poetry' ]]; then
     curl -sSL https://install.python-poetry.org | python3 -
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 fi
+
+if [[ $1 == 'micro' ]]; then
+	cd /usr/bin
+	sudo curl https://getmic.ro | sudo bash
 
 if [[ $1 == 'pyenv' ]]; then
     curl https://pyenv.run | bash
