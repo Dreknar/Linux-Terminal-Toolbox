@@ -73,7 +73,7 @@ create_project() {
 	cat ${project_path}/pyproject.toml | grep python
 
 	echo '[Task 4] Set virtualenv'
-	poetry env use $(which python)
+	poetry env use ${HOME}/.pyenv/versions/${pyversion}/bin/python
 
 	echo '[Task 5] Update project (for lock)'
 	poetry update
