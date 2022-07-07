@@ -12,9 +12,13 @@ info_option() {
 }
 
 show_commands() {
-	echo "-- PyGaia Commands -----------------------------------------------------------------------------------------------------------------"
+	echo "-- PyGaia Commands --------------------------------------------------------------------------------------"
 	cat ${PYGAIA_DIR}/commands.info | column -s ";" -t
-	echo "------------------------------------------------------------------------------------------------------------------------------------"
+	echo "---------------------------------------------------------------------------------------------------------"
+}
+
+show_logs() {
+	cat ${PYGAIA_DIR}/created_project.log
 }
 
 install_python() {
@@ -94,6 +98,7 @@ init_env() {
 		echo "python_versions;Show available Python versions manage by Pyenv." >> ${PYGAIA_DIR}/commands.info
 		echo "install_python <version_number>;Install specific Python version." >> ${PYGAIA_DIR}/commands.info
 		echo "create_project <python_verion> <path_and_project_name> <package_name>;Create Poetry project with specific env" >> ${PYGAIA_DIR}/commands.info
+		echo "logs;Show logs" >> ${PYGAIA_DIR}/commands.info
 	fi
 }
 
@@ -143,6 +148,9 @@ case "${option}" in
 		;;
 	"init")
 		init_env
+		;;
+	"logs")
+		show_logs
 		;;
 	"python_tools")
 		check_env_and_tools
