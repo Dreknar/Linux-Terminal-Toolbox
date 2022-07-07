@@ -28,3 +28,13 @@ Simple scripts - show current versions tools that I use.
 
 ## PyGaia
 It is simple script to manage Pyenv and Poetry at once. Poetry can manage packages and create virtualenvs, but It isn't able to manage multiply python versions. PyEnv does it great, so I prepare simple script to use advantages of both tools. You can create poetry project with specific python version using simple command.
+
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/pygaia_create_project.png "PyGaia - create project")
+
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/pygaia_poetry_python.png "PyGaia changed pyproject.toml")
+
+Script has more functions and creates logs
+
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/pygaia_logs.png "PyGaia logs")
+
+![](https://raw.githubusercontent.com/Dreknar/Linux-Terminal-Toolbox/main/data/screenshots/pygaia_info_and_commands.png "PyGaia commands")
