@@ -21,6 +21,10 @@ show_logs() {
 	cat ${PYGAIA_DIR}/created_project.log
 }
 
+show_pyenv_directory() {
+	ls -lh ${HOME}/.pyenv/versions
+}
+
 install_python() {
 	pyversion=$1
 	if [[ "${pyversion}" == "" ]]; then
@@ -99,6 +103,7 @@ init_env() {
 		echo "install_python <version_number>;Install specific Python version." >> ${PYGAIA_DIR}/commands.info
 		echo "create_project <python_verion> <path_and_project_name> <package_name>;Create Poetry project with specific env" >> ${PYGAIA_DIR}/commands.info
 		echo "logs;Show logs" >> ${PYGAIA_DIR}/commands.info
+		echo "pyenv_versions_dir;Show Pyenv directory for Python versions" >> ${PYGAIA_DIR}/commands.info
 	fi
 }
 
@@ -159,6 +164,10 @@ case "${option}" in
 	"python_versions")
 		check_env_and_tools
 		show_python_versions
+		;;
+	"pyenv_versions_dir")
+		check_env_and_tools
+		show_pyenv_directory
 		;;
 	"install_python")
 		check_env_and_tools
