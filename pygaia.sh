@@ -13,7 +13,7 @@ info_option() {
 
 show_commands() {
 	echo "-- PyGaia Commands --------------------------------------------------------------------------------------"
-	cat ${PYGAIA_DIR}/commands.info | column -s ";" -t
+	cat ${PYGAIA_DIR}/commands.info | column --separator ";" --table
 	echo "---------------------------------------------------------------------------------------------------------"
 }
 
@@ -22,7 +22,25 @@ show_logs() {
 }
 
 show_pyenv_directory() {
-	ls -lh ${HOME}/.pyenv/versions
+	ls --long --human-readable ${HOME}/.pyenv/versions
+}
+
+create_backup() {
+	project_name=$1
+	project_dir="$(cat ~/.pygaia_config/created_project.log | grep ${project_name} | awk '{print $3}')"
+
+	if [[ "${project_name}" == "" && "${backup_dir}" == "" ]]; then
+		echo "Wrong parameters"
+		echo "Type: pygaia.sh create_backup <project_name>"
+		exit 1
+	elif [[ ${project_dir} == "" ]]; then
+		echo "Project ${project_name} doesn't exist in PyGaia configuration."
+		exit 1
+	else
+		cd $project_dir
+		tar --create --verbose --gzip --file ${project_name}_backup_$(date +'%Y%m%dT%H%M').tar.gz .
+		mv ${project_name}_backup_$(date +'%Y%m%dT%H%M').tar.gz ${PYGAIA_DIR}/backups/
+	fi
 }
 
 install_python() {
@@ -73,7 +91,7 @@ create_project() {
 	cd ${project_path} && pyenv local ${pyversion}
 	
 	echo '[Task 3] Change python version in poetry configuration'
-	sed -i 's/python = "^3.10"/python = "'$pyversion'"/' ${project_path}/pyproject.toml
+	sed --in-place 's/python = "^3.10"/python = "'$pyversion'"/' ${project_path}/pyproject.toml
 	cat ${project_path}/pyproject.toml | grep python
 
 	echo '[Task 4] Set virtualenv'
@@ -92,7 +110,8 @@ init_env() {
 	if [[ -d "${PYGAIA_DIR}" ]]; then
 		echo "Directory already exists."
 	else
-		mkdir -p ${PYGAIA_DIR}
+		mkdir --parents ${PYGAIA_DIR}
+		mkdir ${PYGAIA_DIR}/backups
 		echo "Environment created. Path: ${PYGAIA_DIR}"
 
 		echo "info;Show information about author, version, etc." >> ${PYGAIA_DIR}/commands.info
@@ -180,5 +199,10 @@ case "${option}" in
 		project=$3
 		package=$4
 		create_project ${version} ${project} ${package}
+		;;
+	"create_backup")
+		check_env_and_tools
+		project_name=$2
+		create_backup ${project_name}
 		;;
 esac
