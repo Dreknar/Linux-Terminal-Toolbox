@@ -24,6 +24,7 @@ fi
 if [[ $1 == 'micro' ]]; then
 	cd /usr/bin
 	sudo curl https://getmic.ro | sudo bash
+fi
 
 if [[ $1 == 'pyenv' ]]; then
     curl https://pyenv.run | bash
