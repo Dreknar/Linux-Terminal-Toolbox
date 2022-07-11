@@ -115,14 +115,15 @@ init_env() {
 		echo "Environment created. Path: ${PYGAIA_DIR}"
 
 		echo "info;Show information about author, version, etc." >> ${PYGAIA_DIR}/commands.info
-		echo "commands;Show this information." >> ${PYGAIA_DIR}/commands.info
+		echo "commands;Show this informatio." >> ${PYGAIA_DIR}/commands.info
 		echo "init;Init PyGaia workplace" >> ${PYGAIA_DIR}/commands.info
 		echo "python_tools;Show Python and Poetry version." >> ${PYGAIA_DIR}/commands.info
-		echo "python_versions;Show available Python versions manage by Pyenv." >> ${PYGAIA_DIR}/commands.info
-		echo "install_python <version_number>;Install specific Python version." >> ${PYGAIA_DIR}/commands.info
+		echo "python_versions;Show available Python versions manage by Pyenv" >> ${PYGAIA_DIR}/commands.info
+		echo "install_python <version_number>;Install specific Python version" >> ${PYGAIA_DIR}/commands.info
 		echo "create_project <python_verion> <path_and_project_name> <package_name>;Create Poetry project with specific env" >> ${PYGAIA_DIR}/commands.info
 		echo "logs;Show logs" >> ${PYGAIA_DIR}/commands.info
 		echo "pyenv_versions_dir;Show Pyenv directory for Python versions" >> ${PYGAIA_DIR}/commands.info
+		echo "create_backup <project_name>;Create backup for selected project. Project has to created by script" >> ${PYGAIA_DIR}/commands.info
 	fi
 }
 
